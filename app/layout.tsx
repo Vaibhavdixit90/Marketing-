@@ -4,22 +4,12 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/context/providers";
-import { usePathname } from "next/navigation";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const hideLayoutForPaths = [
-    "/explore-meera/",
-    "/explore-meera",
-    "/demostoreleadform",
-    "/demostoreleadform/",
-  ];
-  const shouldHideLayout = hideLayoutForPaths.includes(pathname);
-
   return (
     <html lang="en">
       <head>
@@ -42,10 +32,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* Navbar is commented out */}
-          {/* {!shouldHideLayout && <Navbar />} */}
           {children}
-          {!shouldHideLayout && <Footer />}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

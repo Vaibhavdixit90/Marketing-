@@ -80,7 +80,7 @@ const HeroVideoDialog = forwardRef<HTMLVideoElement, HeroVideoProps>(
     const selectedAnimation = animationVariants[animationStyle];
 
     return (
-      <div className={cn("relative", className)}>
+      <div className={cn("relative mt-10", className)}>
         <div
           className="group relative cursor-pointer"
           onClick={() => setIsVideoOpen(true)}
