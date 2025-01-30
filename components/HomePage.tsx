@@ -1,5 +1,4 @@
 "use client";
-import { Hero } from "@/components/hero";
 import Testimonial from "@/components/TestimonialSingle";
 import { FooterCta } from "@/components/FooterCta";
 import { Testimonials } from "@/components/Testimonials";
@@ -16,9 +15,8 @@ import NewHero from "./NewHero";
 export default function HomePage() {
   return (
     <main>
-      {/* <Hero /> */}
       <NewHero />
-      <Cta />
+      {/* <Cta /> */}
 
       <StepsCard />
 
