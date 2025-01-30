@@ -1,75 +1,96 @@
-import Image from "next/image";
-import React from "react";
-import { PlayfulHeroSection } from "./PlayfulHeroSection";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import React, { useEffect, useState } from "react";
+import { HeroVideoDialogDemo } from "./HeroVideoDialog";
+import { Button } from "./button";
+import { LinkPreview } from "./ui/link-preview";
+import { RainbowButton } from "./ui/rainbow-button";
+import { useCalEmbed } from "@/app/hooks/useCalEmbed";
+import { CONSTANTS } from "@/constants/links";
 
-const images = [
-  "https://cms.flowautomate.io/uploads/Untitled_design_7c41492031.png",
-  "https://cms.flowautomate.io/uploads/Untitled_design_7c41492031.png",
-  "https://cms.flowautomate.io/uploads/Untitled_design_7c41492031.png",
-];
+// Define the expected API response type
+interface HeroData {
+  Hero_Top_Heading: string;
+  Hero_Secound_Heading: string;
+  Hero_Video_Preview_Link: string;
+  Hero_Video_Link: string;
+  Hero_Description: string;
+}
 
 const NewHero = () => {
+  const [heroData, setHeroData] = useState<HeroData | null>(null);
+
+  useEffect(() => {
+    const fetchHeroData = async () => {
+      try {
+        const response = await fetch(
+          "https://cms.flowautomate.io/api/meera-landing-page"
+        );
+        const data = await response.json();
+        setHeroData(data.data.attributes);
+      } catch (error) {
+        console.error("Error fetching hero data:", error);
+      }
+    };
+
+    fetchHeroData();
+  }, []);
+
+  const calOptions = useCalEmbed({
+    namespace: CONSTANTS.CALCOM_NAMESPACE,
+    styles: {
+      branding: {
+        brandColor: CONSTANTS.CALCOM_BRAND_COLOR,
+      },
+    },
+    hideEventTypeDetails: CONSTANTS.CALCOM_HIDE_EVENT_TYPE_DETAILS,
+    layout: CONSTANTS.CALCOM_LAYOUT,
+  });
+
+  if (!heroData) {
+    return <p className="text-center mt-10">Loading...</p>;
+  }
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:pb-10 sm:px-8 sm:py-20">
-      <PlayfulHeroSection />
+    <div className="overflow-x-hidden">
+      <section className="pt-12 sm:pt-16">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h1 className="px-6 text-lg text-gray-600 font-inter mt-14">
+              {heroData.Hero_Top_Heading}
+            </h1>
+            <p className="mt-5 text-4xl font-bold leading-tight text-gray-900 sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight font-pj">
+              {heroData.Hero_Secound_Heading}
+            </p>
 
-      {/* Image Grid for Desktop, Swiper for Mobile */}
-      <div className="max-w-7xl mx-auto mt-10">
-        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
-          {images.map((src, index) => (
-            <Image
-              key={index}
-              src={src}
-              alt={`Image ${index + 1}`}
-              width={300}
-              height={400}
-              className={`w-full h-auto rounded-[20px] mx-auto ${index === 1 ? "mt-10" : ""}`}
-            />
-          ))}
+            <div className="mt-10 flex-shrink-0 px-4 flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0 sm:items-center sm:justify-center sm:space-x-5 md:px-8">
+              <Button
+                data-cal-namespace={calOptions.namespace}
+                data-cal-link={CONSTANTS.CALCOM_LINK}
+                data-cal-config={`{"layout":"${calOptions.layout}"}`}
+                as="button"
+                variant="primary"
+                className="flex items-center px-5 md:px-14 py-3 text-center text-base dark:bg-white dark:text-black"
+              >
+                Book a Consultation
+              </Button>
+              <div>
+                <LinkPreview>
+                  <RainbowButton href="#" className="px-14 py-3 font-bold">
+                    Get Started - Step 01
+                  </RainbowButton>
+                </LinkPreview>
+              </div>
+            </div>
+
+            <p className="mt-8 text-base text-gray-500 font-inter">
+              {heroData.Hero_Description}
+            </p>
+          </div>
         </div>
 
-        {/* Swiper Carousel for Mobile */}
-        <div className="sm:hidden">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={1.5}
-            pagination={{
-              clickable: true,
-              el: ".swiper-pagination",
-            }}
-            modules={[Pagination]}
-          >
-            {images.map((src, index) => (
-              <SwiperSlide key={index}>
-                <Image
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  width={300}
-                  height={400}
-                  className="w-auto h-auto rounded-[20px] mx-auto"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          {/* Pagination Container */}
-          <div className="swiper-pagination" />
+        <div className="pb-12">
+          <HeroVideoDialogDemo />
         </div>
-      </div>
-
-      {/* Text and Button Section */}
-      {/* <div className="mt-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-7xl mx-auto">
-        <p className="text-lg max-w-xl text-center md:text-left">
-          This is a demo paragraph describing the content. You can replace it
-          with your actual text to provide more information.
-        </p>
-        <RainbowButton href="#" className="px-12 sm:px-24 py-7 font-bold">
-          Get Started - Step 01
-        </RainbowButton>
-      </div> */}
+      </section>
     </div>
   );
 };
