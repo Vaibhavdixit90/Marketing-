@@ -54,10 +54,8 @@ const NewHero = () => {
       <section className="pt-12 sm:pt-16">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="px-6 text-lg text-gray-600 font-inter mt-14">
-              {heroData.Hero_Top_Heading}
-            </h1>
-            <p className="mt-5 text-4xl font-bold leading-tight text-gray-900 sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight font-pj">
+            <h1 className="px-6 text-lg  mt-14">{heroData.Hero_Top_Heading}</h1>
+            <p className="mt-5 text-4xl font-bold leading-tight  sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-tight ">
               {heroData.Hero_Secound_Heading}
             </p>
 
@@ -81,7 +79,7 @@ const NewHero = () => {
               </div>
             </div>
 
-            <p className="mt-8 text-base text-gray-500 font-inter">
+            <p className="mt-8 text-base ">
               {heroData.Hero_Description}
             </p>
           </div>
