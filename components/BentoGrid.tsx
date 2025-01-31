@@ -42,15 +42,15 @@ export default function BentoGrid() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto flex flex-col py-10 px-4">
+    <div className="max-w-7xl mx-auto flex flex-col py-10 px-5">
       <h1 className="w-full md:max-w-[80%] text-center md:text-left text-3xl font-semibold leading-snug tracking-tight sm:text-4xl md:text-5xl lg:text-[4rem] lg:leading-[5rem]">
         {heading}
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 mt-10">
         {features.map((feature, index) => (
           <div
             key={feature.id}
-            className={`bg-white dark:bg-[#1d1d1d] rounded-3xl p-8 shadow-xl transition-all duration-300 ${
+            className={`bg-[#ececec] dark:bg-[#1d1d1d] rounded-3xl p-7 shadow-xl transition-all duration-300 ${
               index === 0 ? "md:col-span-2" : ""
             }`}
           >
@@ -63,10 +63,10 @@ export default function BentoGrid() {
               />
             </div>
             <div>
-              <h3 className="font-semibold text-black dark:text-white text-xl mb-4">
+              <h3 className="text-2xl font-bold mb-4 text-left">
                 {feature.Section_Title}
               </h3>
-              <p className="text-sm text-black dark:text-white leading-relaxed">
+              <p className="text-base leading-relaxed">
                 {feature.Section_Description}
               </p>
             </div>

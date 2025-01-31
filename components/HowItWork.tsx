@@ -31,10 +31,11 @@ export function HowItWorks() {
   }, []);
 
   return (
-    <div className="relative mx-auto max-w-7xl">
+    <div className="relative mx-auto max-w-7xl my-[50px] ">
       <div className="mx-auto max-w-7xl">
-        <h1 className="text-4xl md:text-4xl lg:text-8xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-10 leading-10 lg:leading-[7rem]">
-          {videoHeading || ""}
+        <h1 className="text-4xl font-bold leading-tight sm:leading-tight sm:text-7xl lg:text-[5.5rem]lg:leading-tight text-center"  dangerouslySetInnerHTML={{
+          __html: videoHeading,
+        }}>
         </h1>
       </div>
       <HeroVideoDialog

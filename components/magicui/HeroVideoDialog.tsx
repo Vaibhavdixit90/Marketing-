@@ -92,7 +92,7 @@ const HeroVideoDialog = forwardRef<HTMLVideoElement, HeroVideoProps>(
             ref={containerRef} // Only ref for the div container
             className="rounded-[20px] backdrop-blur-lg"
           >
-            <div className="rounded-[20px] p-2">
+            <div className="rounded-[20px] p-2 px-5">
               <video
                 ref={ref} // Use ref for the video
                 src={videoPreviewSrc}

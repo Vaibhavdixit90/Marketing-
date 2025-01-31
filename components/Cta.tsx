@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { Button } from "./button";
 import { useCalEmbed } from "@/app/hooks/useCalEmbed";
@@ -79,7 +78,7 @@ const Cta = () => {
           <div>
             <LinkPreview>
               <RainbowButton href="#" className="px-14 py-3 font-bold">
-                Get Started - Step 01
+                Get Started Now
               </RainbowButton>
             </LinkPreview>
           </div>

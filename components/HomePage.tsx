@@ -11,6 +11,7 @@ import BentoGrid from "./BentoGrid";
 import Pricing from "./Pricing";
 import { HowItWorks } from "./HowItWork";
 import NewHero from "./NewHero";
+import StepsCard2 from "./StepsCard2";
 
 export default function HomePage() {
   return (
@@ -21,7 +22,7 @@ export default function HomePage() {
       <StepsCard />
 
       <HowItWorks />
-
+      <StepsCard2 />
       <DemoStoreCard />
 
       <InView
@@ -42,7 +43,6 @@ export default function HomePage() {
       >
         <BentoGrid />
       </InView>
-      {/* <FeaturedCategories /> */}
 
       <InView
         variants={{

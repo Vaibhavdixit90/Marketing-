@@ -77,7 +77,7 @@ export function FooterCta() {
 
         <div className="w-full text-center md:text-left">
           <RainbowButton href="#" className="px-24 py-7 mt-10">
-            Get Started - Step 01
+            Get Started Now
           </RainbowButton>
         </div>
       </div>

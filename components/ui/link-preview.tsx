@@ -24,7 +24,7 @@ export const LinkPreview = ({ children, className }: LinkPreviewProps) => {
   const handleMouseMove = (event: React.MouseEvent) => {
     const targetRect = event.currentTarget.getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
-    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
+    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; 
     x.set(offsetFromCenter);
   };
 

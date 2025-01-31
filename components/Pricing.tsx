@@ -103,7 +103,7 @@ export default function Pricing() {
           href={pricingData?.Button_href || "#"}
           className="px-24 py-7"
         >
-          Get Started - Step 01
+          Get Started Now
         </RainbowButton>
       </div>
     </div>
