@@ -4,7 +4,6 @@ import { FooterCta } from "@/components/FooterCta";
 import { Testimonials } from "@/components/Testimonials";
 import { InView } from "@/components/in-view";
 import DemoStoreCard from "@/components/DemoStoreCard";
-import Cta from "./Cta";
 import FaqPage from "./FaqPage";
 import StepsCard from "./StepsCard";
 import BentoGrid from "./BentoGrid";

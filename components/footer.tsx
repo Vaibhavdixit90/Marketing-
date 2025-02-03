@@ -26,7 +26,7 @@ export const Footer = () => {
   return (
     <div className="relative bg-[#f1f1f1] dark:bg-[#1d1d1d]">
       <div className="py-5 relative flex justify-center items-center">
-        <p className="text-sm  text-black dark:text-white">{footerText}</p>
+        <p className="text-sm text-black dark:text-white">{footerText}</p>
       </div>
     </div>
   );
