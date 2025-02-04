@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import HeroVideoDialog from "./magicui/HeroVideoDialog";
 
-export function HowItWorks() {
+export function HowItWorksLanding1() {
   const [videoSrc, setVideoSrc] = useState("");
   const [videoPreviewSrc, setVideoPreviewSrc] = useState("");
   const [videoHeading, setVideoHeading] = useState("");
@@ -33,10 +33,12 @@ export function HowItWorks() {
   return (
     <div className="relative mx-auto max-w-7xl my-[50px] ">
       <div className="mx-auto max-w-7xl">
-        <h1 className="text-4xl font-bold leading-tight sm:leading-tight sm:text-7xl lg:text-[5.5rem]lg:leading-tight text-center"  dangerouslySetInnerHTML={{
-          __html: videoHeading,
-        }}>
-        </h1>
+        <h1
+          className="text-4xl font-bold leading-tight sm:leading-tight sm:text-7xl lg:text-[5.5rem]lg:leading-tight text-center"
+          dangerouslySetInnerHTML={{
+            __html: videoHeading,
+          }}
+        ></h1>
       </div>
       <HeroVideoDialog
         videoSrc={videoSrc}

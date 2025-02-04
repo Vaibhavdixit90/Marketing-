@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import HeroVideoDialog from "./magicui/HeroVideoDialog";
 
-export function HeroVideoDialogDemo() {
+export function VideoDialogLanding2() {
   const [videoSrc, setVideoSrc] = useState("");
   const [videoPreviewSrc, setVideoPreviewSrc] = useState("");
 
@@ -9,7 +9,7 @@ export function HeroVideoDialogDemo() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://cms.flowautomate.io/api/meera-landing-page"
+          "https://cms.flowautomate.io/api/meera-landing-page-2"
         );
         const data = await response.json();
 

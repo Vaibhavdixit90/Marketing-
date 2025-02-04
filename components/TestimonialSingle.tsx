@@ -13,9 +13,6 @@ interface TestimonialData {
   Section_Image: {
     data: ImageData;
   };
-  Company_Logo: {
-    data: ImageData;
-  };
   Review: string;
   Name: string;
 }
@@ -28,7 +25,7 @@ const Testimonial: React.FC = () => {
     const fetchTestimonialData = async () => {
       try {
         const response = await axios.get(
-          "https://cms.flowautomate.io/api/homepage?populate=Sections_8.Section_Image,Sections_8.Company_Logo"
+          "https://cms.flowautomate.io/api/homepage?populate=Sections_8.Section_Image,Sections_8"
         );
         setTestimonialData(response.data.data.attributes.Sections_8);
       } catch (error) {

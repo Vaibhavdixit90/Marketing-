@@ -18,7 +18,7 @@ interface APIResponse {
   };
 }
 
-export default function BentoGrid() {
+export default function BentoGridLanding3() {
   const [features, setFeatures] = useState<Feature[]>([]);
   const [heading, setHeading] = useState<string>("");
 
@@ -26,7 +26,7 @@ export default function BentoGrid() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://cms.flowautomate.io/api/meera-landing-page?populate=*"
+          "https://cms.flowautomate.io/api/meera-landing-page-3?populate=*"
         );
         const data: APIResponse = await response.json();
 
@@ -43,18 +43,22 @@ export default function BentoGrid() {
 
   return (
     <div className="max-w-7xl mx-auto flex flex-col py-10 px-5">
-      <h1 className="w-full md:max-w-[80%] text-center md:text-left text-3xl font-semibold leading-snug tracking-tight sm:text-4xl md:text-5xl lg:text-[4rem] lg:leading-[5rem]">
-        {heading}
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 mt-10">
+      <h1
+        className="text-center text-[34px] font-bold leading-tight  sm:leading-tight sm:text-7xl lg:text-[5.5rem]lg:leading-tight"
+        dangerouslySetInnerHTML={{
+          __html: heading,
+        }}
+      ></h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
         {features.map((feature, index) => (
           <div
             key={feature.id}
-            className={`bg-[#ececec] dark:bg-[#1d1d1d] rounded-3xl p-7 shadow-xl transition-all duration-300 ${
-              index === 0 ? "md:col-span-2" : ""
-            }`}
+            className="bg-[#ececec] dark:bg-[#1d1d1d] rounded-3xl p-7 shadow-xl transition-all duration-300"
           >
             <div className="relative mb-6 h-[200px] md:h-[300px]">
+              <div className="absolute top-3 left-3 bg-white text-black font-bold px-5 py-2 rounded-full shadow-md z-20">
+                {index + 1}
+              </div>
               <Image
                 src={feature.Section_Image || ""}
                 alt={feature.Section_Title}

@@ -17,9 +17,10 @@ interface SectionData {
   Section_Title: string;
   Section_Description: string;
   Section_Video: SectionVideoData;
+  CTA_Button_Href: string;
 }
 
-export function FooterCta() {
+export function CtaLanding1() {
   const [sectionData, setSectionData] = useState<SectionData | null>(null);
   const baseUrl = "https://cms.flowautomate.io";
 
@@ -28,10 +29,17 @@ export function FooterCta() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${baseUrl}/api/meera-landing-page?populate=Section_8.Section_Video`
+          `https://cms.flowautomate.io/api/meera-landing-page?populate=Section_8.Section_Video`
         );
         const data = await response.json();
-        setSectionData(data?.data?.attributes?.Section_8);
+
+        // Ensure the correct path to CTA_Button_Href
+        const section8 = data?.data?.attributes?.Section_8;
+        const ctaHref = data?.data?.attributes?.CTA_Button_Href || "#";
+
+        if (section8) {
+          setSectionData({ ...section8, CTA_Button_Href: ctaHref });
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -76,7 +84,10 @@ export function FooterCta() {
         </p>
 
         <div className="w-full text-center md:text-left">
-          <RainbowButton href="#" className="px-24 py-7 mt-10">
+          <RainbowButton
+            href={sectionData.CTA_Button_Href}
+            className="px-24 py-7 mt-10"
+          >
             Get Started Now
           </RainbowButton>
         </div>

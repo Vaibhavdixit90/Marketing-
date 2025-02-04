@@ -6,7 +6,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 interface PricingData {
   Section_4_Heading: string;
   Section_4_Description: string;
-  Button_href: string;
+  Pricing_Button_Href: string;
   Steps: {
     id: number;
     Tittle: string;
@@ -19,7 +19,7 @@ interface PricingData {
   }[];
 }
 
-export default function Pricing() {
+export default function PricingLanding2() {
   const [pricingData, setPricingData] = useState<PricingData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -28,7 +28,7 @@ export default function Pricing() {
     async function fetchPricingData() {
       try {
         const res = await fetch(
-          "https://cms.flowautomate.io/api/meera-landing-page?populate[Steps][populate]=Points",
+          "https://cms.flowautomate.io/api/meera-landing-page-2?populate[Steps][populate]=Points",
           { cache: "no-store" }
         );
 
@@ -100,7 +100,7 @@ export default function Pricing() {
 
       <div className="w-full text-center md:text-left">
         <RainbowButton
-          href={pricingData?.Button_href || "#"}
+          href={pricingData?.Pricing_Button_Href || "#"}
           className="px-24 py-7"
         >
           Get Started Now

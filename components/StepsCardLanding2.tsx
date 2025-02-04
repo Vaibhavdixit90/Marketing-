@@ -8,7 +8,7 @@ interface StepData {
   Section_Description: string;
 }
 
-const StepsCard2: React.FC = () => {
+const StepsCardLanding2: React.FC = () => {
   const [steps, setSteps] = useState<StepData[]>([]);
   const [heading, setHeading] = useState<string>("");
 
@@ -16,11 +16,11 @@ const StepsCard2: React.FC = () => {
     const fetchSteps = async () => {
       try {
         const response = await fetch(
-          "https://cms.flowautomate.io/api/meera-landing-page?populate=*"
+          "https://cms.flowautomate.io/api/meera-landing-page-2?populate=*"
         );
         const data = await response.json();
-        setHeading(data.data.attributes.Section_5_Heading || "");
-        setSteps(data.data.attributes.Section_5_Data || []);
+        setHeading(data.data.attributes.Section_1_Heading || "");
+        setSteps(data.data.attributes.Section_1_Data || []);
       } catch (error) {
         console.error("Error fetching steps:", error);
       }
@@ -61,4 +61,4 @@ const StepsCard2: React.FC = () => {
   );
 };
 
-export default StepsCard2;
+export default StepsCardLanding2;

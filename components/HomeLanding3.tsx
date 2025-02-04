@@ -1,35 +1,31 @@
 "use client";
 import Testimonial from "@/components/TestimonialSingle";
-import { FooterCta } from "@/components/FooterCta";
 import { Testimonials } from "@/components/Testimonials";
 import { InView } from "@/components/in-view";
 import DemoStoreCard from "@/components/DemoStoreCard";
-import FaqPage from "./FaqPage";
-import StepsCard from "./StepsCard";
-import BentoGrid from "./BentoGrid";
-import Pricing from "./Pricing";
-import { HowItWorks } from "./HowItWork";
-import NewHero from "./NewHero";
-import StepsCard2 from "./StepsCard2";
+import HeroLanding3 from "./HeroLanding3";
+import StepsCardLanding3 from "./StepsCardLanding3";
+import { HowItWorksLanding3 } from "./HowItWorkLanding3";
+import StepsCardAgainLanding3 from "./StepsCardAgainLanding3";
+import BentoGridLanding3 from "./BentoGridLanding3";
+import FaqLanding3 from "./FaqLanding3";
+import PricingLanding3 from "./PricingLanding3";
+import { CtaLanding3 } from "./CtaLanding3";
 
-export default function HomePage() {
+export default function HomeLanding3() {
   return (
     <main>
-      <NewHero />
-      {/* <Cta /> */}
-
-      <StepsCard />
-
-      <HowItWorks />
-      <StepsCard2 />
+      <HeroLanding3 />
+      <StepsCardLanding3 />
+      <HowItWorksLanding3 />
+      <StepsCardAgainLanding3 />
       <DemoStoreCard />
-
       <InView
         variants={{
           hidden: {
             opacity: 0,
             scale: 0.8,
-            filter: "blur(10px)", // Adjust blur amount as needed
+            filter: "blur(10px)",
           },
           visible: {
             opacity: 1,
@@ -40,15 +36,14 @@ export default function HomePage() {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewOptions={{ margin: "0px 0px -350px 0px" }}
       >
-        <BentoGrid />
+        <BentoGridLanding3 />
       </InView>
-
       <InView
         variants={{
           hidden: {
             opacity: 0,
             scale: 0.8,
-            filter: "blur(10px)", // Adjust blur amount as needed
+            filter: "blur(10px)",
           },
           visible: {
             opacity: 1,
@@ -59,7 +54,7 @@ export default function HomePage() {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewOptions={{ margin: "0px 0px -350px 0px" }}
       >
-        <Pricing />
+        <PricingLanding3 />
       </InView>
       <InView
         variants={{
@@ -79,7 +74,6 @@ export default function HomePage() {
       >
         <Testimonial />
       </InView>
-
       <InView
         variants={{
           hidden: {
@@ -98,7 +92,6 @@ export default function HomePage() {
       >
         <Testimonials />
       </InView>
-
       <InView
         variants={{
           hidden: {
@@ -115,9 +108,8 @@ export default function HomePage() {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewOptions={{ margin: "0px 0px -350px 0px" }}
       >
-        <FaqPage />
+        <FaqLanding3 />
       </InView>
-
       <InView
         variants={{
           hidden: {
@@ -134,7 +126,7 @@ export default function HomePage() {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         viewOptions={{ margin: "0px 0px -350px 0px" }}
       >
-        <FooterCta />
+        <CtaLanding3 />
       </InView>
     </main>
   );

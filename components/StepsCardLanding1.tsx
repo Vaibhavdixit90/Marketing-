@@ -8,7 +8,7 @@ interface StepData {
   Section_Description: string;
 }
 
-const StepsCard: React.FC = () => {
+const StepsCardLanding1: React.FC = () => {
   const [steps, setSteps] = useState<StepData[]>([]);
   const [heading, setHeading] = useState<string>("");
 
@@ -61,4 +61,4 @@ const StepsCard: React.FC = () => {
   );
 };
 
-export default StepsCard;
+export default StepsCardLanding1;

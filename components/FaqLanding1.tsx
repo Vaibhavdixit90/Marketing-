@@ -8,7 +8,7 @@ interface FaqItem {
   Answer: string;
 }
 
-export default function FaqPage() {
+export default function FaqLanding1() {
   const [faqData, setFaqData] = useState<FaqItem[]>([]);
   const [sectionHeading, setSectionHeading] = useState<string>("");
 
