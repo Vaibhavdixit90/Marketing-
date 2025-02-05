@@ -46,7 +46,7 @@ export default function FaqLanding2() {
         {faqData.map((faq) => (
           <div
             key={faq.id}
-            className="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50"
+            className="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-[10px]"
           >
             <button
               type="button"
