@@ -36,53 +36,53 @@ export default function FaqLanding2() {
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 md:px-8">
-      <div className="text-center sm:text-left">
-        <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-          {sectionHeading || "Frequently Asked Questions"}
-        </h2>
-      </div>
+    <div className="text-center sm:text-left">
+      <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+        {sectionHeading || "Frequently Asked Questions"}
+      </h2>
+    </div>
 
-      <div className="max-w-7xl mx-auto mt-8 space-y-4 md:mt-16">
-        {faqData.map((faq) => (
-          <div
-            key={faq.id}
-            className="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-[10px]"
+    <div className="max-w-7xl mx-auto mt-8 space-y-4 md:mt-16">
+      {faqData.map((faq) => (
+        <div
+          key={faq.id}
+          className="transition-all duration-200 bg-white dark:bg-[#1d1d1d] border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-[10px]"
+        >
+          <button
+            type="button"
+            onClick={() => toggleFaq(faq.id)}
+            className="flex items-center justify-between w-full px-4 py-5 sm:p-6"
           >
-            <button
-              type="button"
-              onClick={() => toggleFaq(faq.id)}
-              className="flex items-center justify-between w-full px-4 py-5 sm:p-6"
+            <span className="w-full text-left text-lg font-semibold">
+              {faq.Question}
+            </span>
+
+            <svg
+              className={`w-6 h-6 text-gray-400 transform ${
+                openFaqId === faq.id ? "rotate-180" : "rotate-0"
+              }`}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <span className="w-full text-left text-lg font-semibold text-black">
-                {faq.Question}
-              </span>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
 
-              <svg
-                className={`w-6 h-6 text-gray-400 transform ${
-                  openFaqId === faq.id ? "rotate-180" : "rotate-0"
-                }`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-
-            {openFaqId === faq.id && (
-              <div className="px-4 pb-5 sm:px-6 sm:pb-6">
-                <p className="text-gray-700">{faq.Answer}</p>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
+          {openFaqId === faq.id && (
+            <div className="px-4 pb-5 sm:px-6 sm:pb-6">
+              <p>{faq.Answer}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
   );
 }

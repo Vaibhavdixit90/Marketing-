@@ -37,7 +37,7 @@ export default function FaqLanding1() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 md:px-8">
       <div className="text-center sm:text-left">
-        <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+        <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
           {sectionHeading || "Frequently Asked Questions"}
         </h2>
       </div>
@@ -46,14 +46,14 @@ export default function FaqLanding1() {
         {faqData.map((faq) => (
           <div
             key={faq.id}
-            className="transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-[10px]"
+            className="transition-all duration-200 bg-white dark:bg-[#1d1d1d] border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 rounded-[10px]"
           >
             <button
               type="button"
               onClick={() => toggleFaq(faq.id)}
               className="flex items-center justify-between w-full px-4 py-5 sm:p-6"
             >
-              <span className="w-full text-left text-lg font-semibold text-black">
+              <span className="w-full text-left text-lg font-semibold">
                 {faq.Question}
               </span>
 
@@ -77,7 +77,7 @@ export default function FaqLanding1() {
 
             {openFaqId === faq.id && (
               <div className="px-4 pb-5 sm:px-6 sm:pb-6">
-                <p className="text-gray-700">{faq.Answer}</p>
+                <p>{faq.Answer}</p>
               </div>
             )}
           </div>
