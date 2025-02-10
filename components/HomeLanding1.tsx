@@ -19,25 +19,8 @@ export default function HomeLanding1() {
       <StepsCardLanding1 />
       <HowItWorksLanding1 />
       <StepsCardAgainLanding1 />
+      <BentoGridLanding1 />
       <DemoStoreCard />
-      <InView
-        variants={{
-          hidden: {
-            opacity: 0,
-            scale: 0.8,
-            filter: "blur(10px)",
-          },
-          visible: {
-            opacity: 1,
-            scale: 1,
-            filter: "blur(0px)",
-          },
-        }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        viewOptions={{ margin: "0px 0px -350px 0px" }}
-      >
-        <BentoGridLanding1 />
-      </InView>
       <InView
         variants={{
           hidden: {
@@ -79,7 +62,7 @@ export default function HomeLanding1() {
           hidden: {
             opacity: 0,
             scale: 0.8,
-            filter: "blur(10px)", // Adjust blur amount as needed
+            filter: "blur(10px)", 
           },
           visible: {
             opacity: 1,

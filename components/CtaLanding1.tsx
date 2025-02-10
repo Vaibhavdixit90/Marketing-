@@ -76,14 +76,14 @@ export function CtaLanding1() {
 
       {/* Text content section */}
       <div className="flex flex-col items-start justify-start lg:order-1 lg:items-center lg:justify-center">
-        <h1 className="max-w-5xl text-center md:text-left text-3xl font-bold tracking-tight md:text-5xl md:leading-tight">
+        <h1 className="max-w-5xl text-center lg:text-left text-3xl font-bold tracking-tight md:text-5xl md:leading-tight">
           {sectionData.Section_Title}
         </h1>
-        <p className="relative z-10 mt-2 max-w-3xl text-center md:text-left text-neutral-600 dark:text-neutral-400 md:mt-6 md:text-xl">
+        <p className="relative z-10 mt-2 max-w-3xl text-center lg:text-left text-neutral-600 dark:text-neutral-400 md:mt-6 md:text-xl">
           {sectionData.Section_Description}
         </p>
 
-        <div className="w-full text-center md:text-left">
+        <div className="w-full text-center lg:text-left">
           <RainbowButton
             href={sectionData.CTA_Button_Href}
             className="px-24 py-7 mt-10"

@@ -98,12 +98,12 @@ const HeroLanding2 = () => {
           </div>
         </div>
 
-        <div className="pb-5 sm:pb-12">
+        <div className="pb-3 sm:pb-12">
           <VideoDialogLanding2 />
         </div>
 
         {/* Buttons (Visible only on mobile) */}
-        <div className="mt-6 flex flex-col items-center space-y-4 sm:hidden">
+        <div className="flex flex-col items-center space-y-4 sm:hidden">
           <Button
             data-cal-namespace={calOptions.namespace}
             data-cal-link={CONSTANTS.CALCOM_LINK}

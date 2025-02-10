@@ -19,25 +19,8 @@ export default function HomeLanding2() {
       <StepsCardLanding2 />
       <HowItWorksLanding2 />
       <StepsCardAgainLanding2 />
+      <BentoGridLanding2 />
       <DemoStoreCard />
-      <InView
-        variants={{
-          hidden: {
-            opacity: 0,
-            scale: 0.8,
-            filter: "blur(10px)",
-          },
-          visible: {
-            opacity: 1,
-            scale: 1,
-            filter: "blur(0px)",
-          },
-        }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        viewOptions={{ margin: "0px 0px -350px 0px" }}
-      >
-        <BentoGridLanding2 />
-      </InView>
       <InView
         variants={{
           hidden: {

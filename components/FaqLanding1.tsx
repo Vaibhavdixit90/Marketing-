@@ -36,7 +36,7 @@ export default function FaqLanding1() {
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 md:px-8">
-      <div className="text-center sm:text-left">
+      <div className="text-center lg:text-left">
         <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
           {sectionHeading || "Frequently Asked Questions"}
         </h2>

@@ -185,10 +185,13 @@ const DemoStoreCard = (props: {}) => {
         viewOptions={{ margin: "0px 0px -350px 0px" }}
       >
         <div className="mx-auto max-w-7xl px-4 py-20 md:px-8">
-          <h1 className=" w-full md:max-w-[80%] text-center md:text-left text-3xl font-semibold leading-snug tracking-tight text-black dark:text-neutral-300 sm:text-4xl md:text-5xl lg:text-[4rem] lg:leading-[5rem]">
-            {heading}
-          </h1>
-          <p className="py-7 text-center md:text-left  text-xl text-black dark:text-neutral-300">
+          <h1
+            className=" w-full  text-center text-3xl font-semibold leading-snug tracking-tight text-black dark:text-neutral-300 sm:text-4xl md:text-5xl lg:text-[4rem] lg:leading-[5rem] md:leading-tight"
+            dangerouslySetInnerHTML={{
+              __html: heading,
+            }}
+          ></h1>
+          <p className="py-7 text-center  text-xl text-black dark:text-neutral-300">
             {subheading}
           </p>
 

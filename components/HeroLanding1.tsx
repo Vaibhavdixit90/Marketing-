@@ -56,7 +56,7 @@ const HeroLanding1 = () => {
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="px-6 text-lg mt-14">{heroData.Top_Heading}</h1>
             <p
-              className="mt-5 text-[2rem] font-bold leading-tight sm:leading-tight sm:text-7xl lg:text-[5.5rem] lg:leading-tight"
+              className="mt-5 text-[2rem] font-bold leading-tight sm:leading-tight md:text-[3.3rem] lg:text-[5.5rem] lg:leading-tight"
               dangerouslySetInnerHTML={{
                 __html: heroData.Secound_Heading,
               }}
@@ -98,12 +98,12 @@ const HeroLanding1 = () => {
           </div>
         </div>
 
-        <div className="pb-5 sm:pb-12">
+        <div className="pb-3 sm:pb-12">
           <VideoDialogLanding1 />
         </div>
 
         {/* Buttons (Visible only on mobile) */}
-        <div className="mt-6 flex flex-col items-center space-y-4 sm:hidden">
+        <div className="flex flex-col items-center space-y-4 sm:hidden">
           <Button
             data-cal-namespace={calOptions.namespace}
             data-cal-link={CONSTANTS.CALCOM_LINK}

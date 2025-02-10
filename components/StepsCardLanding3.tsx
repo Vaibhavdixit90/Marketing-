@@ -32,7 +32,7 @@ const StepsCardLanding3: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto flex flex-col px-4 py-20 md:px-8">
       <h1
-        className="text-center text-[34px] font-bold leading-tight  sm:leading-tight sm:text-7xl lg:text-[5.5rem]lg:leading-tight"
+        className="text-center text-[26px] font-bold leading-tight  sm:leading-tight sm:text-7xl lg:text-[5.5rem]lg:leading-tight"
         dangerouslySetInnerHTML={{
           __html: heading,
         }}
