@@ -58,7 +58,7 @@ export default function PricingLanding3() {
 
   return (
     <div className="mx-auto max-w-7xl py-20 px-4 md:px-8">
-      <h2 className=" w-full md:max-w-[80%] text-center md:text-left text-3xl font-semibold leading-snug tracking-tight  sm:text-4xl md:text-5xl lg:text-[4rem] lg:leading-[5rem] ">
+      <h2 className="w-full lg:max-w-[80%] text-center lg:text-left text-3xl font-semibold leading-snug tracking-tight  sm:text-4xl md:text-5xl lg:text-[4rem] lg:leading-[5rem] ">
         {pricingData?.Section_4_Heading}
       </h2>
 
@@ -101,7 +101,7 @@ export default function PricingLanding3() {
       <div className="w-full text-center md:text-left">
         <RainbowButton
           href={pricingData?.Pricing_Button_Href || "#"}
-          className="px-24 py-7"
+          className="px-14 py-6"
         >
           Get Started Now
         </RainbowButton>

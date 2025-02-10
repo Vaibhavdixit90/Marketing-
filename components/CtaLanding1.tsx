@@ -54,7 +54,6 @@ export function CtaLanding1() {
 
   return (
     <div className="mx-auto mb-28 grid max-w-7xl grid-cols-1 gap-10 overflow-hidden px-4 md:gap-20 md:px-8 md:pt-20 lg:grid-cols-2">
-      {/* Video section comes first on mobile */}
       <div className="lg:order-2">
         <div className="rounded-3xl border border-neutral-200 bg-neutral-100 p-4 shadow-[0px_0px_5px_1px_rgba(0,0,0,0.05)_inset] dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-[0px_0px_5px_1px_rgba(255,255,255,0.05)_inset]">
           <video
