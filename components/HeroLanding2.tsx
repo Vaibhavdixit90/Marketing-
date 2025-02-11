@@ -55,18 +55,21 @@ const HeroLanding2 = () => {
       <section className="pt-6 sm:pt-12 lg:pt-20">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <h1 className="px-0 sm:px-6 text-lg mt-14 mx-auto max-w-[90%] sm:max-w-[70%]">
-              {heroData.Top_Heading}
-            </h1>
-            <p
-              className="mt-5 text-[2rem] font-bold leading-tight sm:leading-tight md:text-[3.3rem] lg:text-[5.5rem] lg:leading-tight"
+            <h1
+              className="px-0 sm:px-6 text-lg mt-14 mx-auto max-w-[90%] sm:max-w-[70%]"
               dangerouslySetInnerHTML={{
-                __html: heroData.Secound_Heading,
+                __html: heroData.Top_Heading,
               }}
-            ></p>
-            <h1 className="px-0 sm:px-6 text-lg mt-5 sm:mt-14 mx-auto max-w-[90%] sm:max-w-[70%]">
-              {heroData.Third_Heading}
-            </h1>
+            ></h1>
+            <div
+              dangerouslySetInnerHTML={{ __html: heroData.Secound_Heading }}
+            />
+            <h1
+              className="px-0 sm:px-6 text-lg mt-5 sm:mt-14 mx-auto max-w-[90%] sm:max-w-[70%]"
+              dangerouslySetInnerHTML={{
+                __html: heroData.Third_Heading,
+              }}
+            ></h1>
 
             {/* Buttons (Hidden on mobile) */}
             <div className="mt-10 flex-shrink-0 px-4 flex-col items-center space-y-5 sm:flex-row sm:space-y-0 sm:items-center sm:justify-center sm:space-x-5 md:px-8 hidden sm:flex">
