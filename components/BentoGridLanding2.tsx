@@ -44,7 +44,7 @@ export default function BentoGridLanding2() {
   return (
     <div className="max-w-7xl mx-auto flex flex-col py-10 px-5">
     <h1
-      className="text-center text-[26px] font-bold leading-tight md:leading-tight md:text-5xl lg:text-[72px] lg:leading-tight"
+      className="text-center text-[28px] font-bold leading-tight md:leading-tight md:text-5xl lg:text-[72px] lg:leading-tight"
       dangerouslySetInnerHTML={{
         __html: heading,
       }}

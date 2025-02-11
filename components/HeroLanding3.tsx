@@ -9,6 +9,7 @@ import { VideoDialogLanding3 } from "./VideoDialogLanding3";
 // Define the expected API response type
 interface HeroData {
   Top_Heading: string;
+  Third_Heading: string;
   Secound_Heading: string;
   Hero_Video_Preview_Link: string;
   Hero_Video_Link: string;
@@ -54,13 +55,18 @@ const HeroLanding3 = () => {
       <section className="pt-6 sm:pt-12 lg:pt-20">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <h1 className="px-6 text-lg mt-14">{heroData.Top_Heading}</h1>
+            <h1 className="px-0 sm:px-6 text-lg mt-14 mx-auto max-w-[90%] sm:max-w-[70%]">
+              {heroData.Top_Heading}
+            </h1>
             <p
               className="mt-5 text-[2rem] font-bold leading-tight sm:leading-tight md:text-[3.3rem] lg:text-[5.5rem] lg:leading-tight"
               dangerouslySetInnerHTML={{
                 __html: heroData.Secound_Heading,
               }}
             ></p>
+            <h1 className="px-0 sm:px-6 text-lg mt-5 sm:mt-14 mx-auto max-w-[90%] sm:max-w-[70%]">
+              {heroData.Third_Heading}
+            </h1>
 
             {/* Buttons (Hidden on mobile) */}
             <div className="mt-10 flex-shrink-0 px-4 flex-col items-center space-y-5 sm:flex-row sm:space-y-0 sm:items-center sm:justify-center sm:space-x-5 md:px-8 hidden sm:flex">
@@ -87,7 +93,7 @@ const HeroLanding3 = () => {
               <div>
                 <LinkPreview>
                   <RainbowButton
-                    href={heroData.Get_Started_Button_Link || ""} 
+                    href={heroData.Get_Started_Button_Link || ""}
                     className="px-14 py-6 font-bold"
                   >
                     Get Started Now
@@ -127,7 +133,7 @@ const HeroLanding3 = () => {
           <div>
             <LinkPreview>
               <RainbowButton
-                href={heroData.Get_Started_Button_Link || ""} 
+                href={heroData.Get_Started_Button_Link || ""}
                 className="px-14 py-3 font-bold"
               >
                 Get Started Now
