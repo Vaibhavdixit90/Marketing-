@@ -13,7 +13,7 @@ interface HeroData {
   Secound_Heading: string;
   Hero_Video_Preview_Link: string;
   Hero_Video_Link: string;
-  Get_Started_Button_Link: string; // Added this field
+  Hero_Get_Start_Button_Href: string; // Added this field
 }
 
 const HeroLanding1 = () => {
@@ -96,7 +96,8 @@ const HeroLanding1 = () => {
               <div>
                 <LinkPreview>
                   <RainbowButton
-                    href={heroData.Get_Started_Button_Link || ""}
+                    href={heroData.Hero_Get_Start_Button_Href || ""}
+                    target="_blank"
                     className="px-14 py-6 font-bold"
                   >
                     Get Started Now
@@ -136,7 +137,8 @@ const HeroLanding1 = () => {
           <div>
             <LinkPreview>
               <RainbowButton
-                href={heroData.Get_Started_Button_Link || ""}
+                href={heroData.Hero_Get_Start_Button_Href || ""}
+                target="_blank"
                 className="px-14 py-3 font-bold"
               >
                 Get Started Now
