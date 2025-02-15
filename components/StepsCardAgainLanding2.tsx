@@ -31,33 +31,34 @@ const StepsCardAgainLanding2: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto flex flex-col px-4 py-20 md:px-8">
-    <h1
-      className="text-center text-[28px] font-bold leading-tight md:leading-tight md:text-5xl lg:text-[72px] lg:leading-tight"
-      dangerouslySetInnerHTML={{
-        __html: heading,
-      }}
-    ></h1>
-    <div className="flex flex-col md:flex-row gap-8 w-full mt-10">
-      {steps.map((step) => (
-        <div
-          key={step.id}
-          className="p-5 sm:p-7 rounded-2xl shadow-xl flex-1 bg-[#ececec] dark:bg-[#1d1d1d]"
-        >
-          <Image
-            src={step.Section_Image}
-            alt={step.Section_Title}
-            width={600}
-            height={600}
-            className="mx-auto mb-6 rounded-lg"
-          />
-          <h3 className="text-2xl font-bold mb-4 text-left">
-            {step.Section_Title}
-          </h3>
-          <p className="text-base text-left">{step.Section_Description}</p>
-        </div>
-      ))}
+      <h1
+        className="text-center text-[28px] font-bold leading-tight md:leading-tight md:text-5xl lg:text-[72px] lg:leading-tight"
+        dangerouslySetInnerHTML={{
+          __html: heading,
+        }}
+      ></h1>
+      <div className="flex flex-col md:flex-row gap-8 w-full mt-10">
+        {steps.map((step) => (
+          <div
+            key={step.id}
+            className="p-5 sm:p-7 rounded-2xl shadow-xl flex-1 bg-[#ececec] dark:bg-[#1d1d1d]"
+          >
+            <Image
+              src={step.Section_Image}
+              alt={step.Section_Title}
+              width={600}
+              height={600}
+              priority
+              className="mx-auto mb-6 rounded-lg"
+            />
+            <h3 className="text-2xl font-bold mb-4 text-left">
+              {step.Section_Title}
+            </h3>
+            <p className="text-base text-left">{step.Section_Description}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
   );
 };
 

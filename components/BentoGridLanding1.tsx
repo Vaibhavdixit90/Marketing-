@@ -63,6 +63,7 @@ export default function BentoGridLanding1() {
                 src={feature.Section_Image || ""}
                 alt={feature.Section_Title}
                 fill
+                priority
                 className="object-cover rounded-2xl"
               />
             </div>

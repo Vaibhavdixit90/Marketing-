@@ -48,6 +48,7 @@ const StepsCardLanding1: React.FC = () => {
               alt={step.Section_Title}
               width={600}
               height={600}
+              priority
               className="mx-auto mb-6 rounded-lg"
             />
             <h3 className="text-2xl font-bold mb-4 text-left">

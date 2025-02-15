@@ -41,13 +41,13 @@ const HeroVideoDialog = forwardRef<HTMLVideoElement, HeroVideoProps>(
           transition={{ duration: 0.4, delay: 0.9, ease: "easeOut" }}
           className="rounded-[32px] backdrop-blur-lg"
         >
-          <div className="relative rounded-[24px] p-2">
+          <div className="relative md:rounded-[24px] rounded-[10px] p-2">
             <video
               ref={videoRef}
               src={videoSrc}
               width={1920}
               height={1080}
-              className="w-full rounded-[20px] border shadow-lg transition-all duration-200 ease-out"
+              className="w-full md:rounded-[24px] rounded-[10px] border shadow-lg transition-all duration-200 ease-out"
               controls={isPlaying}
               loop
               muted
