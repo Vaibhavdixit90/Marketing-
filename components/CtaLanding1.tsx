@@ -84,6 +84,7 @@ export function CtaLanding1() {
 
         <div className="w-full text-center lg:text-left">
           <RainbowButton
+            target="_blank"
             href={sectionData.CTA_Button_Href}
             className="px-24 py-7 mt-10"
           >

@@ -51,7 +51,7 @@ const HeroLanding2 = () => {
   }
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-hidden">
       <section className="pt-6 sm:pt-12 lg:pt-20">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
