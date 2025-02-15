@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { cn } from "@/lib/utils";
-import LinkTransition from "next-view-transitions";
 
 export const Button = ({
   href,
@@ -16,15 +15,15 @@ export const Button = ({
   children: React.ReactNode;
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient";
-} & (
-  | React.ComponentPropsWithoutRef<"a">
-  | React.ComponentPropsWithoutRef<"button">
-  | typeof LinkTransition
-)) => {
+} & React.ComponentPropsWithoutRef<"a"> &
+  React.ComponentPropsWithoutRef<"button">) => {
   const baseStyles =
-    "px-4 py-2 rounded-xl bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-xl bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
-  const variantStyles = {
+  const variantStyles: Record<
+    "primary" | "secondary" | "dark" | "gradient",
+    string
+  > = {
     primary:
       "shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
     secondary: "bg-transparent shadow-none dark:text-white",
@@ -35,7 +34,7 @@ export const Button = ({
 
   return (
     <Tag
-      href={href || undefined}
+      {...(Tag === "a" ? { href } : {})} // Ensure href is only used for anchor elements
       className={cn(baseStyles, variantStyles[variant], className)}
       {...props}
     >
