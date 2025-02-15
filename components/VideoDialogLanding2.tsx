@@ -33,7 +33,7 @@ export function VideoDialogLanding2() {
   return (
     <div className="relative mx-auto max-w-7xl">
       <HeroVideoDialog
-        animationStyle="from-center"
+        // animationStyle="from-center"
         videoSrc={videoSrc}
         videoPreviewSrc={videoPreviewSrc}
         thumbnailAlt="Hero Video"
