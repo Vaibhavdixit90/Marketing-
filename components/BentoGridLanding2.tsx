@@ -4,9 +4,15 @@ import Image from "next/image";
 // Define types for API response
 interface Feature {
   id: number;
-  Section_Image: string;
   Section_Title: string;
   Section_Description: string;
+  Section_Image: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    };
+  };
 }
 
 interface APIResponse {
@@ -18,15 +24,16 @@ interface APIResponse {
   };
 }
 
-export default function BentoGridLanding2() {
+export default function BentoGridLanding1() {
   const [features, setFeatures] = useState<Feature[]>([]);
   const [heading, setHeading] = useState<string>("");
+  const baseUrl = "https://cms.flowautomate.io"; // Define your base URL
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://cms.flowautomate.io/api/meera-landing-page-2?populate=*"
+          "https://cms.flowautomate.io/api/meera-landing-page-2?populate[Section_3_Data][populate]=Section_Image"
         );
         const data: APIResponse = await response.json();
 
@@ -60,10 +67,10 @@ export default function BentoGridLanding2() {
                 {index + 1}
               </div>
               <Image
-                src={feature.Section_Image || ""}
+                src={baseUrl + feature.Section_Image.data.attributes.url || ""}
                 alt={feature.Section_Title}
                 fill
-                priority
+                loading="lazy"
                 className="object-cover rounded-2xl"
               />
             </div>

@@ -52,7 +52,6 @@ const Testimonial: React.FC = () => {
             width={500}
             height={300}
             loading="lazy"
-            quality={100}
           />
         </div>
 

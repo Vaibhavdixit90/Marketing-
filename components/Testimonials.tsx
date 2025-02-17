@@ -70,7 +70,6 @@ export const TestimonialCard = ({
           width={40}
           height={40}
           loading="lazy"
-          quality={100}
           className="rounded-full ring-1 ring-border ring-offset-4"
         />
       )}

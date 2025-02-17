@@ -16,11 +16,21 @@ const StepsCardLanding1: React.FC = () => {
     const fetchSteps = async () => {
       try {
         const response = await fetch(
-          "https://cms.flowautomate.io/api/meera-landing-page?populate=*"
+          "https://cms.flowautomate.io/api/meera-landing-page?populate[Section_1_Data][populate]=Section_Image"
         );
         const data = await response.json();
         setHeading(data.data.attributes.Section_1_Heading || "");
-        setSteps(data.data.attributes.Section_1_Data || []);
+
+        // Add base URL for images in the response
+        const baseUrl = "https://cms.flowautomate.io"; // Replace with actual base URL if different
+        const stepsWithFullImageUrl = data.data.attributes.Section_1_Data.map(
+          (step: any) => ({
+            ...step,
+            Section_Image: baseUrl + step.Section_Image.data.attributes.url,
+          })
+        );
+
+        setSteps(stepsWithFullImageUrl);
       } catch (error) {
         console.error("Error fetching steps:", error);
       }
@@ -48,7 +58,7 @@ const StepsCardLanding1: React.FC = () => {
               alt={step.Section_Title}
               width={600}
               height={600}
-              priority
+              loading="lazy"
               className="mx-auto mb-6 rounded-lg"
             />
             <h3 className="text-2xl font-bold mb-4 text-left">
