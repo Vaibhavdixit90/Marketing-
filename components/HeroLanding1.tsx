@@ -61,9 +61,10 @@ const HeroLanding1 = () => {
                 __html: heroData.Top_Heading,
               }}
             ></h1>
-            <div
+            <p
+              className="mt-5 text-3xl leading-tight font-bold sm:leading-tight md:text-[3.3rem] lg:text-[5.5rem] lg:leading-tight"
               dangerouslySetInnerHTML={{ __html: heroData.Secound_Heading }}
-            />
+            ></p>
             <h1
               className="px-0 sm:px-6 text-lg mt-5 sm:mt-14 mx-auto max-w-[90%] sm:max-w-[70%]"
               dangerouslySetInnerHTML={{

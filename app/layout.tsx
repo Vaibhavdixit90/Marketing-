@@ -20,10 +20,27 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+
+        {/* Optimized Google Fonts Loading */}
         <link
+          rel="preload"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
+          as="style"
         />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          media="print"
+          onLoad={(e) => (e.currentTarget.media = "all")}
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          />
+        </noscript>
+
+        {/* Preload Custom Font */}
         <link
           rel="preload"
           href="/fonts/custom.woff2"
